@@ -33,7 +33,6 @@ refreshBtn.addEventListener("click", function () {
 let addBtn = document.querySelector("#add"); // take user input and create a book card
 addBtn.addEventListener("click", function () {
     AddBookToLibrary();
-    // DisplayBookCard();
     DisplayCards(myLibrary);
     ResetForm();
     newbookForm.classList.add("invisible");
@@ -48,20 +47,22 @@ closeBtn.addEventListener("click", function () {
 
 //////////////////////////////////////////////
 
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-}
-
-Book.prototype.toggleStatus = function () {
-    if (this.isRead === true) {
-        this.isRead = false;
-    } else {
-        this.isRead = true;
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
     }
-};
+
+    toggleStatus() {
+        if (this.isRead === true) {
+            this.isRead = false;
+        } else {
+            this.isRead = true;
+        }
+    }
+}
 
 function CreateBook() {
     let book = new Book();
