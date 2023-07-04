@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Library Project</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="index.js" defer></script>
+        <script
+            src="https://kit.fontawesome.com/c48369c47d.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="newbook_form invisible">
+                <label for="title">Title</label>
+                <input id="title" type="text" />
+                <label for="author">Author</label>
+                <input id="author" type="text" />
+                <label for="num_pages">Number of pages</label>
+                <input id="num_pages" type="number" />
+                <label>Did you read the book?</label>
+                <div class="radio_block">
+                    <label for="isRead">yes</label>
+                    <input
+                        id="isRead"
+                        type="radio"
+                        value="yes"
+                        name="read"
+                        checked
+                    />
+                </div>
+                <div class="radio_block">
+                    <label for="isntRead">no</label>
+                    <input id="isntRead" type="radio" value="no" name="read" />
+                </div>
+                <div class="button_wrap">
+                    <button id="add" type="submit">Add</button>
+                    <button id="close">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="add_book">
+            <button id="new">Add Book</button>
+            <button id="refresh">Refresh</button>
+        </div>
+    </body>
+</html>
