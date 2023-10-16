@@ -7,20 +7,32 @@
         <title>Library Project</title>
         <link rel="stylesheet" href="style.css" />
         <script src="index.js" defer></script>
-        <script
-            src="https://kit.fontawesome.com/c48369c47d.js"
-            crossorigin="anonymous"
-        ></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <div class="wrapper">
-            <div class="newbook_form invisible">
-                <label for="title">Title</label>
+        <div class="bookshelf">
+            <div class="newbook-form invisible">
+                <label for="title">Title </label>
                 <input id="title" type="text" />
+
                 <label for="author">Author</label>
                 <input id="author" type="text" />
+
                 <label for="num_pages">Number of pages</label>
                 <input id="num_pages" type="number" />
+
                 <label>Did you read the book?</label>
                 <div class="radio_block">
                     <label for="isRead">yes</label>
@@ -36,13 +48,13 @@
                     <label for="isntRead">no</label>
                     <input id="isntRead" type="radio" value="no" name="read" />
                 </div>
-                <div class="button_wrap">
+                <div class="form-btns">
                     <button id="add" type="submit">Add</button>
                     <button id="close">Close</button>
                 </div>
             </div>
         </div>
-        <div class="add_book">
+        <div class="control-area">
             <button id="new">Add Book</button>
             <button id="refresh">Refresh</button>
         </div>

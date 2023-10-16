@@ -5,7 +5,7 @@ input::-webkit-inner-spin-button {
 }
 
 html {
-    font-size: 100%;
+    font-size: 18px;
     height: 100%;
     box-sizing: border-box;
 }
@@ -16,6 +16,7 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    /* font-family: "PT Sans", sans-serif; */
 }
 
 body {
@@ -25,19 +26,23 @@ body {
     line-height: 1.6;
 }
 
-.wrapper {
+.bookshelf {
     min-height: 90%;
-    width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     position: relative;
 
     background-color: #4e3636;
+    /* background-image: url("./images/wood-texture.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    filter: brightness(90%); */
 }
 
-.newbook_form {
-    height: 500px;
-    width: 500px;
+.newbook-form {
+    height: 38rem;
+    width: 34rem;
     border: 10px solid #e07a31;
+    border-radius: 0.5rem;
     z-index: 2;
 
     position: absolute;
@@ -47,7 +52,7 @@ body {
     transform: translate(-50%, -50%);
 
     background-color: #e8aa42;
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 fieldset {
@@ -57,29 +62,60 @@ fieldset {
 .card {
     display: inline-block;
     position: relative;
-    height: 300px;
-    width: 230px;
+    height: 20rem;
+    width: 25rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    padding-top: 2.2rem;
-    font-size: 1.4rem;
-    color: #321e1e;
-
-    background-color: #e7b152;
-}
-
-.card_title {
-    font-weight: bold;
+    padding-left: 7rem;
+    padding-top: 3.5rem;
     font-size: 1.6rem;
+    box-shadow: 4px 4px 10px 3px #321e1e;
+    border-radius: 0.5rem;
+    border-bottom: 1rem solid rgb(155, 0, 0);
+    border-bottom: 1rem solid rgb(3, 95, 0);
+    color: #362620;
+
+    background-image: url("./images/cover-texture.jpg");
+    background-size: 110%;
+    background-position: -0.5rem -0.8rem;
+    background-repeat: no-repeat;
+    filter: brightness(85%);
+
+    font-family: "Skranji", sans-serif;
 }
 
-.read_status:hover {
+.card-title {
+    font-weight: bold;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: #321e1e;
+}
+
+.read-status {
+    position: absolute;
+    /* margin-left: 3rem; */
+    bottom: 0;
+    right: 1rem;
+}
+
+.read-status:hover {
     cursor: pointer;
     font-weight: bold;
 }
 
-.add_book {
+/* .book-description {
+    position: absolute;
+    height: 30rem;
+    width: 35rem;
+    background-color: #e8aa42;
+    border: 0.5rem solid #321e1e;
+    border-radius: 1rem;
+    right: -32rem;
+    bottom: -28rem;
+} */
+
+.control-area {
     border-top: 10px solid #321e1e;
     background-color: #321e1e;
     height: 10%;
@@ -95,44 +131,65 @@ button {
     height: 3rem;
     font-size: 1.4rem;
     border: none;
+    border-radius: 0.5rem;
     background-color: #f78635;
     color: rgba(255, 255, 255, 0.842);
 
     cursor: pointer;
 }
 
-.card_del {
+/* .card-del {
     width: 1.5rem;
     height: 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #7e1717;
+    background-color: #7e1717ce;
+    border-radius: 0.3rem;
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
-}
+} */
 
-.button_wrap {
+.card-del {
     position: absolute;
-    bottom: 2rem;
-    left: 13%;
+    right: 0.5rem;
+    top: 0.5rem;
+    background-color: black;
+    border-radius: 0.3rem;
+    cursor: pointer;
 }
 
-.button_wrap > button {
+.card-del:hover {
+    outline: 2px solid white;
+    background-color: white;
+}
+
+.form-btns {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 5.2rem;
+}
+
+.form-btns > button {
     background-color: #4e3636;
 }
 
-.button_wrap > button:last-child {
+.form-btns > button:last-child {
     margin-left: 1.5rem;
 }
 
 input {
-    display: block;
     width: 100%;
     height: 8%;
-    margin-bottom: 1rem;
-    padding-left: 0.3rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
     font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+input:focus {
+    outline-color: #321e1e;
 }
 
 label {
@@ -140,6 +197,7 @@ label {
     color: #321e1e;
     font-size: 1.4rem;
     font-weight: bold;
+    margin-bottom: 0.3rem;
 }
 
 .radio_block {
@@ -148,8 +206,7 @@ label {
 }
 
 .radio_block label {
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: normal;
 }
 
 .radio_block input {
