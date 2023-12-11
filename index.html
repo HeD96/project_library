@@ -23,15 +23,15 @@
     </head>
     <body>
         <div class="bookshelf">
-            <div class="newbook-form invisible">
-                <label for="title">Title </label>
-                <input id="title" type="text" />
+            <form class="newbook-form invisible" action="/">
+                <label for="title">Title</label>
+                <input id="title" type="text" minlength="3" required />
 
                 <label for="author">Author</label>
-                <input id="author" type="text" />
+                <input id="author" type="text" minlength="3" required />
 
                 <label for="num_pages">Number of pages</label>
-                <input id="num_pages" type="number" />
+                <input id="num_pages" type="number" minlength="3" required />
 
                 <label>Did you read the book?</label>
                 <div class="radio_block">
@@ -52,7 +52,7 @@
                     <button id="add" type="submit">Add</button>
                     <button id="close">Close</button>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="control-area">
             <button id="new">Add Book</button>

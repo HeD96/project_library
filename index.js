@@ -97,7 +97,10 @@ const FormHandler = (function () {
         });
 
         let addBookBtn = document.querySelector("#add");
-        addBookBtn.addEventListener("click", AddBookToLibrary);
+        addBookBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            ValidateForm();
+        });
 
         let closeFormBtn = document.querySelector("#close");
         closeFormBtn.addEventListener("click", ToggleForm);
@@ -120,20 +123,34 @@ const FormHandler = (function () {
         });
     };
 
-    const AddBookToLibrary = function () {
+    const ValidateForm = function () {
         let titleInput = document.querySelector("#title");
         let authorInput = document.querySelector("#author");
         let pagesInput = document.querySelector("#num_pages");
         let isReadInput = document.querySelectorAll("input[name=read]");
 
+        if (
+            titleInput.value !== "" &&
+            authorInput.value !== "" &&
+            pagesInput.value !== ""
+        ) {
+            alert("Continue");
+
+            AddBookToLibrary(titleInput, authorInput, pagesInput, isReadInput);
+        } else {
+            alert("Fill inputs");
+        }
+    };
+
+    const AddBookToLibrary = function (title, author, pages, isRead) {
         let book = new Book();
 
-        book.title = titleInput.value;
-        book.author = authorInput.value;
-        book.pages = pagesInput.value;
+        book.title = title.value;
+        book.author = author.value;
+        book.pages = pages.value;
         book.isRead;
 
-        isReadInput.forEach(function (radio) {
+        isRead.forEach(function (radio) {
             if (radio.checked) {
                 book.isRead = radio.value;
             }
@@ -143,7 +160,7 @@ const FormHandler = (function () {
 
         Bookshelf.DisplayBooks(myLibrary);
         ToggleForm();
-        ClearForm(titleInput, authorInput, pagesInput, isReadInput);
+        ClearForm(title, author, pages, isRead);
     };
 
     return {
