@@ -129,16 +129,33 @@ const FormHandler = (function () {
         let pagesInput = document.querySelector("#num_pages");
         let isReadInput = document.querySelectorAll("input[name=read]");
 
+        if (titleInput.value === "") {
+            ErrorMessage(titleInput);
+        }
+
+        if (authorInput.value === "") {
+            ErrorMessage(authorInput);
+        }
+
+        if (pagesInput.value === "") {
+            ErrorMessage(pagesInput);
+        }
+
         if (
             titleInput.value !== "" &&
             authorInput.value !== "" &&
             pagesInput.value !== ""
         ) {
-            alert("Continue");
-
             AddBookToLibrary(titleInput, authorInput, pagesInput, isReadInput);
-        } else {
-            alert("Fill inputs");
+        }
+    };
+
+    const ErrorMessage = function (inputField) {
+        if (inputField.value === "") {
+            inputField.classList.toggle("invalid");
+            setTimeout(function () {
+                inputField.classList.toggle("invalid");
+            }, 2000);
         }
     };
 
